@@ -12,7 +12,7 @@ const Navbar: React.FC = () => {
         </Link>
       </div>
       <ul className="navbar-links" style={{marginLeft: 'auto'}}>
-        <li><Link to="/search">Dienstleistersuche</Link></li>
+        <li><Link to="/service">Dienstleistersuche</Link></li>
         <li><Link to="/profile">Profil</Link></li>
         <li><Link to="/about">About Us</Link></li>
       </ul>

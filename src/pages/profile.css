@@ -1,22 +1,28 @@
+
+body, .profile-bg {
+  background: #FFF8E7;
+}
+
 .profile-container {
   max-width: 400px;
   margin: 2rem auto;
-  background: #fff8e7;
+  background: #181a1b;
   border-radius: 1rem;
   box-shadow: 0 2px 8px rgba(0,0,0,0.12);
   padding: 2rem;
+  color: #fff;
 }
 
 .profile-container h1 {
   text-align: center;
-  color: #282c34;
+  color: #fff;
   margin-bottom: 1.5rem;
 }
 
 .profile-container label {
   display: block;
   margin-bottom: 1rem;
-  color: #282c34;
+  color: #fff;
   font-weight: bold;
 }
 

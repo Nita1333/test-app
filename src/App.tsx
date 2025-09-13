@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Profile from './pages/profile';
+import Service from './pages/service';
 import Countdown from './components/Countdown';
 import './App.css';
 import Navbar from './components/Navbar';
@@ -20,6 +21,7 @@ function App() {
             </header>
           } />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/service" element={<Service />} />
         </Routes>
       </div>
     </Router>
