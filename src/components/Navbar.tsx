@@ -4,6 +4,12 @@ import { Link } from "react-router-dom";
 
 
 const Navbar: React.FC = () => {
+  const nav = require('react-router-dom').useNavigate?.();
+  const handleLogout = () => {
+    localStorage.removeItem("weddingUser");
+    if (nav) nav("/");
+    window.location.reload();
+  };
   return (
     <nav className="navbar">
       <div className="navbar-home">
@@ -15,6 +21,9 @@ const Navbar: React.FC = () => {
         <li><Link to="/service">Dienstleistersuche</Link></li>
         <li><Link to="/profile">Profil</Link></li>
         <li><Link to="/about">About Us</Link></li>
+        <li>
+          <button className="logout-btn" onClick={handleLogout}>Logout</button>
+        </li>
       </ul>
     </nav>
   );

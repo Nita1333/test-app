@@ -7,12 +7,28 @@ import Reminder from './pages/reminder';
 import Calendar from './pages/calendar';
 import Todo from './pages/todo';
 import Ideen from './pages/ideen';
+import Auth from './pages/auth';
 import Countdown from './components/Countdown';
 import Dashboard from './components/Dashboard';
 import './App.css';
 import Navbar from './components/Navbar';
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = React.useState(null);
+
+  React.useEffect(() => {
+    const user = localStorage.getItem("weddingUser");
+    if (user) setLoggedInUser(JSON.parse(user));
+  }, []);
+
+  if (!loggedInUser) {
+    return (
+      <Router>
+        <Auth />
+      </Router>
+    );
+  }
+
   return (
     <Router>
       <div className="App">
