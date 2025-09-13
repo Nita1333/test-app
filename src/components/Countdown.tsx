@@ -2,64 +2,35 @@ import React, { useState, useEffect } from "react";
 import "./Countdown.css";
 
 interface CountdownProps {
-  initialSeconds?: number;
+  // initialSeconds?: number;
 }
 
-const Countdown: React.FC<CountdownProps> = ({ initialSeconds = 10 }) => {
-  const [seconds, setSeconds] = useState(initialSeconds);
-  const [inputValue, setInputValue] = useState(initialSeconds.toString());
-  const [isRunning, setIsRunning] = useState(false);
-
+  const Countdown: React.FC = () => {
+  const [daysLeft, setDaysLeft] = useState<number | null>(null);
   useEffect(() => {
-    if (!isRunning) return;
-    if (seconds === 0) return;
-    const timer = setTimeout(() => setSeconds(seconds - 1), 1000);
-    return () => clearTimeout(timer);
-  }, [seconds, isRunning]);
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value.replace(/[^0-9]/g, ""));
-  };
-
-  const handleSetCountdown = () => {
-    const value = parseInt(inputValue, 10);
-    if (!isNaN(value) && value > 0) {
-      setSeconds(value);
-      setIsRunning(false);
+    const dateStr = localStorage.getItem("weddingDate");
+    if (dateStr) {
+      const weddingDate = new Date(dateStr);
+      const today = new Date();
+      const diff = Math.ceil((weddingDate.getTime() - today.getTime()) / (1000 * 60 * 60 * 24));
+      setDaysLeft(diff >= 0 ? diff : 0);
+    } else {
+      setDaysLeft(null);
     }
-  };
+  }, []);
 
-  const handleStart = () => {
-    if (seconds > 0) setIsRunning(true);
-  };
 
-  const handleReset = () => {
-    setSeconds(initialSeconds);
-    setInputValue(initialSeconds.toString());
-    setIsRunning(false);
-  };
+
+
+
 
   return (
     <div className="countdown-container" style={{ textAlign: "center" }}>
-      <h2>Countdown: {seconds} Sekunden</h2>
-      <input
-        type="number"
-        min="1"
-        value={inputValue}
-        onChange={handleInputChange}
-        disabled={isRunning}
-        style={{ width: "80px", fontSize: "1rem" }}
-      />
-      <button onClick={handleSetCountdown} disabled={isRunning}>
-        Setzen
-      </button>
-      <button onClick={handleStart} disabled={isRunning || seconds === 0}>
-        Start
-      </button>
-      <button onClick={handleReset}>
-        Reset
-      </button>
-      {seconds === 0 && <div style={{ marginTop: "16px", color: "#61dafb" }}>Zeit abgelaufen!</div>}
+      {daysLeft !== null ? (
+        <h2>Countdown: {daysLeft} Tage bis zur Hochzeit</h2>
+      ) : (
+        <h2>Bitte trage das Hochzeitsdatum im Profil ein.</h2>
+      )}
     </div>
   );
 };
