@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./Countdown.css";
 
 interface CountdownProps {
   initialSeconds?: number;
@@ -39,7 +40,7 @@ const Countdown: React.FC<CountdownProps> = ({ initialSeconds = 10 }) => {
   };
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div className="countdown-container" style={{ textAlign: "center" }}>
       <h2>Countdown: {seconds} Sekunden</h2>
       <input
         type="number"
@@ -49,13 +50,13 @@ const Countdown: React.FC<CountdownProps> = ({ initialSeconds = 10 }) => {
         disabled={isRunning}
         style={{ width: "80px", fontSize: "1rem" }}
       />
-      <button onClick={handleSetCountdown} disabled={isRunning} style={{ marginLeft: "8px" }}>
+      <button onClick={handleSetCountdown} disabled={isRunning}>
         Setzen
       </button>
-      <button onClick={handleStart} disabled={isRunning || seconds === 0} style={{ marginLeft: "8px" }}>
+      <button onClick={handleStart} disabled={isRunning || seconds === 0}>
         Start
       </button>
-      <button onClick={handleReset} style={{ marginLeft: "8px" }}>
+      <button onClick={handleReset}>
         Reset
       </button>
       {seconds === 0 && <div style={{ marginTop: "16px", color: "#61dafb" }}>Zeit abgelaufen!</div>}

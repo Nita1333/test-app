@@ -19,9 +19,15 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: #FFD700;
+  position: relative;
+  padding-top: 3rem;
+}
+
+.App-header p {
+  font-weight: bold;
 }
 
 .App-link {

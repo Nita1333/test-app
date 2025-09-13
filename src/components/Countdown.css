@@ -1,0 +1,22 @@
+.countdown-container {
+  background: #181a1b;
+  color: #fff;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  display: inline-block;
+}
+
+.countdown-container input,
+.countdown-container button {
+  background: #222;
+  color: #fff;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  margin: 0.2rem;
+}
+
+.countdown-container button:hover {
+  background: #333;
+}

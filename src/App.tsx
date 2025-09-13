@@ -8,11 +8,12 @@ function App() {
     <div className="App">
       <Navbar />
       <header className="App-header">
-  <Countdown />
         <p>
           Willkommen zur Hochzeitsplanung!
         </p>
+        <Countdown />
       </header>
+  
     </div>
   );
 }
