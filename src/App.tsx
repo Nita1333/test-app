@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './logo.svg';
+import Countdown from './components/Countdown';
 import './App.css';
 import Navbar from './components/Navbar';
 
@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Navbar />
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+  <Countdown />
         <p>
           Willkommen zur Hochzeitsplanung!
         </p>
