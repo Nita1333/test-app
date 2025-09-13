@@ -1,0 +1,53 @@
+.reminder-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  background: #181a1b;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  padding: 2rem;
+  color: #fff;
+}
+
+.reminder-container h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.reminder-section, .sharing-section {
+  margin-bottom: 2rem;
+}
+
+.reminder-section h2, .sharing-section h2 {
+  color: #FFD700;
+  margin-bottom: 0.7rem;
+}
+
+.reminder-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.reminder-section li {
+  background: #222;
+  margin: 0.5rem 0;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  color: #fff;
+}
+
+.media-preview {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.media-item {
+  background: #222;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  min-width: 120px;
+  text-align: center;
+}

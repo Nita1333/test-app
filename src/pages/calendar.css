@@ -1,0 +1,53 @@
+.calendar-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  background: #181a1b;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  padding: 2rem;
+  color: #fff;
+}
+
+.calendar-container h1 {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.calendar-form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.calendar-form input {
+  padding: 0.5rem;
+  border-radius: 0.3rem;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.calendar-form button {
+  background: #FFD700;
+  color: #181a1b;
+  border: none;
+  border-radius: 0.3rem;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.calendar-list {
+  list-style: none;
+  padding: 0;
+}
+
+.calendar-list li {
+  background: #222;
+  margin: 0.5rem 0;
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  color: #fff;
+}
